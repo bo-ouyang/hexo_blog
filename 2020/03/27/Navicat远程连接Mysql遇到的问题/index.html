@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"www.ouyang.wiki","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="类的使用">
+  <meta name="description" content="title 远程连接mysql的坑 1: lost connect… 修改过mysql user表中的host为%之后 检查 &#x2F;etc&#x2F;my.cnf 中 是否有bind-address:127.0.0.1 有则注释 或者改成 0.0.0.0  或者在mysqld块加上 skip-name-resolve  最后修改防火墙">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHPBase">
-<meta property="og:url" content="www.ouyang.wiki/2020/03/01/PHPBase/index.html">
+<meta property="og:title" content="Navicat远程连接Mysql遇到的问题">
+<meta property="og:url" content="www.ouyang.wiki/2020/03/27/Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mysql%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="DE_FISHS">
-<meta property="og:description" content="类的使用">
+<meta property="og:description" content="title 远程连接mysql的坑 1: lost connect… 修改过mysql user表中的host为%之后 检查 &#x2F;etc&#x2F;my.cnf 中 是否有bind-address:127.0.0.1 有则注释 或者改成 0.0.0.0  或者在mysqld块加上 skip-name-resolve  最后修改防火墙">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-01T03:57:12.000Z">
-<meta property="article:modified_time" content="2020-03-29T14:47:23.000Z">
+<meta property="article:published_time" content="2020-03-27T14:43:37.843Z">
+<meta property="article:modified_time" content="2020-03-04T15:06:37.000Z">
 <meta property="article:author" content="OY">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="www.ouyang.wiki/2020/03/01/PHPBase/">
+<link rel="canonical" href="www.ouyang.wiki/2020/03/27/Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mysql%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>PHPBase | DE_FISHS</title>
+  <title>Navicat远程连接Mysql遇到的问题 | DE_FISHS</title>
   
 
 
@@ -167,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="www.ouyang.wiki/2020/03/01/PHPBase/">
+    <link itemprop="mainEntityOfPage" href="www.ouyang.wiki/2020/03/27/Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mysql%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PHPBase
+          Navicat远程连接Mysql遇到的问题
         </h1>
 
         <div class="post-meta">
@@ -190,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-01 11:57:12" itemprop="dateCreated datePublished" datetime="2020-03-01T11:57:12+08:00">2020-03-01</time>
+              <time title="创建时间：2020-03-27 22:43:37" itemprop="dateCreated datePublished" datetime="2020-03-27T22:43:37+08:00">2020-03-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-29 22:47:23" itemprop="dateModified" datetime="2020-03-29T22:47:23+08:00">2020-03-29</time>
+                <time title="修改时间：2020-03-04 23:06:37" itemprop="dateModified" datetime="2020-03-04T23:06:37+08:00">2020-03-04</time>
               </span>
 
           
@@ -211,7 +211,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="类的使用"><a href="#类的使用" class="headerlink" title="类的使用"></a>类的使用</h3>
+        <hr>
+<h2 id="title-远程连接mysql的坑"><a href="#title-远程连接mysql的坑" class="headerlink" title="title 远程连接mysql的坑"></a>title 远程连接mysql的坑</h2><p> 1: lost connect…</p>
+<pre><code>修改过mysql user表中的host为%之后
+检查 /etc/my.cnf 中 是否有bind-address:127.0.0.1 有则注释
+或者改成 0.0.0.0
+
+或者在mysqld块加上 skip-name-resolve
+
+最后修改防火墙</code></pre>
     </div>
 
     
@@ -225,10 +233,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/03/27/Navicat%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Mysql%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" rel="next" title="Navicat远程连接Mysql遇到的问题">
-      Navicat远程连接Mysql遇到的问题 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/01/PHPBase/" rel="prev" title="PHPBase">
+      <i class="fa fa-chevron-left"></i> PHPBase
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/29/PHP%E4%B8%ADRedis%E7%A7%92%E6%9D%80%E9%94%81%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="PHP中Redis秒杀锁的使用">
+      PHP中Redis秒杀锁的使用 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -289,7 +300,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的使用"><span class="nav-number">1.</span> <span class="nav-text">类的使用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-远程连接mysql的坑"><span class="nav-number">1.</span> <span class="nav-text">title 远程连接mysql的坑</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
